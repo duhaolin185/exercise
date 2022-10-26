@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // 定义一个类Animal, 有 name， run 方法，run方法可以打印name, age。基于这个Animal类，创建一个子类Cat, 继承Animal类,cat拥有自己的属性age属性。通过es6中的class实现。(3分)
+    class Animal {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      run() {
+        console.log(this.name, this.age)
+      }
+    }
+    class Cat extends Animal {
+      constructor(name, age) {
+        super(name, age);
+        age = 18;
+        super.run()
+      }
+    }
+    let cat = new Cat("张三", 20);
+
+
+
+  </script>
+</body>
+
+</html>

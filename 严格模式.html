@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function fn() {
+    //   "use strict";
+    //   num = 123;
+    // }
+    // fn();
+
+    function Fn() {
+    }
+    Fn.prototype.x = 50;
+    Fn.prototype.y = 100;
+    var fn1 = new Fn()
+    console.log(fn1.x, fn1.y); //50 100
+    Fn.prototype = {
+      y: 400,
+    };
+    var fn2 = new Fn()
+    console.log(fn2.x, fn2.y); //undefined 400
+  </script>
+</body>
+
+</html>

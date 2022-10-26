@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var obj = {
+        // }
+        // if (obj) {
+        //     console.log()
+        // }
+
+        var name = "lily";
+        var Person = function () {
+            this.name = "Andy";
+            this.speak = (works) => {
+                console.log(this.name + "is saying" + works)
+            }
+            this.eat = (food) => {
+                console.log(this.name + "is eating" + food)
+            }
+        }
+        var man = new Person();
+        speak = man.speak;
+        eat = man.eat;
+
+        man.speak("english");
+        man.eat("apple");
+        speak("chinese");
+        eat("chicken");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// const promiseA = Promise.resolve('a');
+			// promiseA.then((res) => {
+			// 	console.log(1, res)
+			// }).then((res) => {
+			// 	console.log(2, res)
+			// })
+			// const promiseB = Promise.resolve('b');
+			// promiseB.then((res) => {
+			// 	console.log(3, res)
+			// })
+			// promiseB.then((res) => {
+			//  	console.log(4, res)
+			// })
+
+			setTimeout(() => {
+				console.log(1);
+			}, 0);
+			const P = new Promise((resolve, reject) => {
+				console.log(2);
+				setTimeout(() => {
+					resolve();
+					console.log(3);
+				}, 0);
+			})
+			P.then(() => {
+				console.log(4);
+			});
+			console.log(5);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 有n个人围成一圈，顺序排号。从第一个人开始报数（从1到3报数），凡报到3的人退出圈子，问最后留下的是原来第几号的哪位，编程实现（3分）
+    var arr = [];
+    var a = 0;
+    for (var i = 0; i < 88; i++) {
+      arr.push(i);
+    }
+    var num = arr.length - 1;
+    for (var i = 0; i < num; i++) {
+      for (var j = 0; j < 2; j++) {
+        a++;
+        if (a > arr.length - 1) {
+          a = 0;
+        }
+      }
+      arr.splice(a, 1)
+    }
+    console.log(arr[0])
+  </script>
+</body>
+
+</html>

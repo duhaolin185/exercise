@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function fn1(n) {
+      //跳出条件
+      if (n == 2) return 2
+      //逻辑  n+n-1 的和
+      return n + fn1(n - 1)
+    }
+
+    console.log(fn1(5))
+
+    // 用JS递归的方式求2到101的和，编程实现（2分）
+    function fn2(n) {
+      if (n == 2) return 2;
+      return n + fn2(n - 1)
+    }
+    console.log(fn2(101))
+
+    // 递归求和
+    function sum(n) {
+      if (n >= 10) {
+        return 10
+      };
+      return n + sum(n + 1);
+    }
+    console.log(sum(1));
+
+    function num(n) {
+      if (n <= 1) return 1;
+      return n + num(n - 1);
+    }
+    console.log(num(10))
+
+
+
+
+
+
+    function sumNumber(n) {
+      if (n <= 1) {
+        return 1;
+      }
+      return n + sumNumber(n - 1);
+    }
+    console.log(sumNumber(20))
+  </script>
+</body>
+
+</html>

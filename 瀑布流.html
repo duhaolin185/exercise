@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      float: left;
+      width: 200px;
+      margin: 0 10px;
+    }
+
+    li {
+      list-style: none;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      font-size: 40px;
+      background: deepskyblue;
+      margin: 10px 0;
+    }
+
+    ul li img {
+      width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <ul></ul>
+  <ul></ul>
+  <ul></ul>
+  <ul></ul>
+  <script>
+
+    let uls = document.querySelectorAll("ul");
+    let minUl = uls[0];
+
+    // 随机高度
+    // for (let i = 0; i < 30; i++) {
+    //   let li = document.createElement("li");
+    //   let text = document.createElement("p");
+    //   li.style.height = ran(150, 600) + "px";
+    //   text.innerHTML = i + 1;
+    //   li.append(text)
+    //   for (let o = 0; o < uls.length; o++) {
+    //     if (uls[o].offsetHeight < minUl.offsetHeight) {
+    //       minUl = uls[o]
+    //     }
+    //   }
+    //   minUl.append(li);
+    // }
+
+
+    // 预加载：在js中使用图片对象先加载图片
+    let imgArr = [];
+    for (let i = 0; i < 4; i++) {
+      let img = new Image();
+      img.src = `./img/${i}.jpg`;
+      imgArr.push(img);
+    }
+    // 最后一张图片加载完成后在执行瀑布流的操作
+    imgArr[imgArr.length - 1].onload = function () {
+      console.log(imgArr[imgArr.length - 1])
+      for (let i = 0; i < 30; i++) {
+        let li = document.createElement("li");
+        li.innerHTML = `<img src="./img/${ran(0, 3)}.jpg"/>`;
+        for (let o = 0; o < uls.length; o++) {
+          if (uls[o].offsetHeight < minUl.offsetHeight) {
+            minUl = uls[o]
+          }
+        }
+        minUl.append(li);
+      }
+
+    }
+    function ran(min, max) {
+      return parseInt(Math.random() * (max - min + 1) + min);
+    }
+  </script>
+</body>
+
+</html>
